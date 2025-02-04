@@ -1,0 +1,60 @@
+.signup-page {
+  background-image: url('https://your-image-url.com'); /* Add an image URL or use a gradient */
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.signup-form {
+  background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width: 100%;
+
+margin-top: 2rem !important;
+}
+
+.signup-form h3 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: black !important;
+}
+
+.signup-form .form-control {
+  border-radius: 8px;
+}
+
+.signup-form .btn {
+  padding: 12px;
+  border-radius: 8px;
+  background-color:firebrick;
+  border: none;
+  width: 100%;
+  margin-top: 1rem !important;
+}
+
+.signup-form .btn:hover {
+  background-color: firebrick !important;
+}
+
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .signup-form {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .signup-form h2 {
+    font-size: 1.5rem;
+  }
+}
