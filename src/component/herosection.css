@@ -1,29 +1,252 @@
+/* Hero Section Styles */
 .hero-section {
-    background-color: #f8f9fa;
-    padding: 60px 0;
-    text-align: center;
-  }
-  
+  position: relative;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Background Image */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/Images/bannerimg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+  z-index: -1;
+}
+
+/* Overlay on top of the background image */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  animation: fadeInUp 2s ease-out;
+}
+
+  /* Hero Title Animation */
   .hero-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1.5s forwards;
+
   }
   
   .hero-subtitle {
-    font-size: 1.2rem;
-    color: #555;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 2s forwards;
+  }
+  
+  /* Modern Search Bar */
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 2.5s forwards;
+  }
+  
+  .search-input {
+    width: 350px;
+    padding: 15px;
+    border-radius: 30px;  /* Rounded corners */
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.7); /* Subtle background */
+    color: #333;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    outline: none;
+  }
+  
+  .search-input:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 10px rgba(0, 102, 204, 0.5);
+  }
+  
+  .search-btn {
+    padding: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .search-btn:hover {
+    background-color: #fff;
+    color: #333;
   }
   
   .hero-btn {
-    padding: 10px 20px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    background-color: #0066cc;
+    border: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+  }
+  
+  .hero-btn:hover {
+    background-color: #004d99;
+  }
+  
+  .scroll-down-indicator {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeInUp 3s forwards;
+  }
+  
+  .scroll-icon {
+    font-size: 2rem;
+    animation: bounce 1.5s infinite;
+  }
+  
+  .scroll-text {
     font-size: 1rem;
+    margin-top: 5px;
+    color: #fff;
   }
   
-  .hero-image {
+  /* Slide Up Animation */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Bounce Animation for Scroll Icon */
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px; /* Added padding for better spacing */
+    flex-direction: column;
+  }
+
+  .hero-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    max-width: 450px;
-    border-radius: 10px;
   }
-  
+
+  /* Search bar & button in a single row */
+  .search-bar-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 350px;
+    gap: 10px; /* Space between input and button */
+    margin-bottom: 20px;
+  }
+
+  .search-input {
+    width: 75%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 30px;
+    margin-left: 3rem !important;
+  }
+
+  .search-btn {
+    width: 50px;
+    height: 35px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+
+  /* Title & subtitle moved below search bar */
+  .hero-title {
+    font-size: 2rem; /* Adjusted for mobile */
+    margin-top: 10rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .scroll-down-indicator {
+    bottom: 10px;
+  }
+
+  .scroll-icon {
+    font-size: 1.8rem;
+  }
+
+  .scroll-text {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,79 @@
+/* Wrapper for Background */
+.steps-wrapper {
+  background-color: #fddcc0; /* Light peach background */
+  padding: 50px 0;
+  text-align: center;
+}
+
+/* Steps Container */
+.steps-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+/* Step Item */
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Step Icon */
+.step-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px dashed gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Step Text */
+.step-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+/* Divider */
+.divider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.divider-line {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .steps-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .step-item {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .divider-container {
+    width: 10px;
+  }
+
+  .divider-line {
+    width: 100%;
+  }
+}

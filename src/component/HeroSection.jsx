@@ -1,33 +1,52 @@
 import React from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { FaSearch } from "react-icons/fa"; 
+import { AiOutlineArrowDown } from "react-icons/ai";  
 import "./herosection.css";
 
 const HeroSection = () => {
   return (
     <div className="hero-section">
-      <Container>
-        <Row className="align-items-center">
-          {/* Left Side - Text Content */}
-          <Col lg={6} md={6} sm={12} className="text-center text-md-start">
-            <h1 className="hero-title">Find Your Dream Job</h1>
-            <p className="hero-subtitle">
-              Explore thousands of job opportunities from top companies.
-            </p>
-            <Button variant="primary" className="hero-btn">
-              Get Started
-            </Button>
-          </Col>
+       <div className="hero-background"></div>
+      <div className="hero-overlay">
+        <Container>
+          <Row className="align-items-center" style={{ height: "100vh" }}>
+           
+            <Col lg={6} md={6} sm={12} className="text-center text-md-start">
+              <h1 className="hero-title animate-title">Find Your Dream Job</h1>
+              <p className="hero-subtitle animate-subtitle">
+                Discover amazing opportunities at top companies.
+              </p>
 
-          {/* Right Side - Image */}
-          <Col lg={6} md={6} sm={12} className="text-center mt-4 mt-md-0">
-            <img
-              src="https://source.unsplash.com/500x300/?office,job"
-              alt="Job Search"
-              className="hero-image"
-            />
-          </Col>
-        </Row>
-      </Container>
+           
+              <div className="search-bar-container animate-search-bar">
+                <Form.Control
+                  type="text"
+                  placeholder="Search for jobs..."
+                  className="search-input"
+                />
+                <Button variant="outline-light" className="search-btn">
+                  <FaSearch />
+                </Button>
+              </div>
+
+     
+              <Button variant="primary" className="hero-btn mt-3 animate-btn">
+                Get Started
+              </Button>
+            </Col>
+
+       
+            <Col lg={6} md={6} sm={12}></Col>
+          </Row>
+
+
+          <div className="scroll-down-indicator">
+            <AiOutlineArrowDown className="scroll-icon" />
+            <p className="scroll-text">Scroll down</p>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 };
