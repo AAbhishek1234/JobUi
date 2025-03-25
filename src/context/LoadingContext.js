@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from "react";
 import PulseLoader from "react-spinners/PulseLoader";
-import "./globalloader.css"; // Ensure you have CSS for centering
+import "./globalloader.css"; 
 
 const LoadingContext = createContext();
 
@@ -19,5 +19,5 @@ export const LoadingProvider = ({ children }) => {
   );
 };
 
-// Custom hook to use the global loader
+
 export const useLoading = () => useContext(LoadingContext);

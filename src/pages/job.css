@@ -1,0 +1,29 @@
+/* Sidebar filter fixed */
+.sidebar-filter {
+    position: sticky;
+    top: 5rem;
+    height: 80vh;
+    overflow-y: auto;
+  }
+  
+  /* Scrollable Job Listings (Only for desktop) */
+  .job-list-container {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+  
+  /* Remove scroll in mobile view */
+  @media (max-width: 767px) {
+    .sidebar-filter {
+      position: static; /* Allow natural scrolling */
+      height: auto;
+      overflow-y: visible;
+    }
+  
+    .job-list-container {
+      max-height: unset;
+      overflow-y: unset;
+    }
+  }
+  

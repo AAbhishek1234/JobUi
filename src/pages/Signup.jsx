@@ -88,6 +88,7 @@ const Signup = () => {
       setLoading(false);
       if (response.ok && data.success) {
         localStorage.setItem("token", data.jwtToken);
+       
         toast.success("login Success!");
         navigate("/"); // Redirect based on role
       } else {

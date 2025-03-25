@@ -10,9 +10,11 @@ function Home() {
     <>
     <Navbar/>
     <HeroSection/>
-    <Footer/>
-    {/* <StepSection/> */}
+ 
+
     <LatestJobs/>
+    <Footer/>
+        {/* <StepSection/> */}
     </>
   )
 }
