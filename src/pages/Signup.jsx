@@ -41,7 +41,7 @@ const Signup = () => {
     formData.append("phoneNumber", input.phoneNumber);
     formData.append("password", input.password);
     formData.append("role", input.role);
-    formData.append("file", input.file);
+    // formData.append("file", input.file);
 
     try {
       const response = await fetch("http://localhost:4000/user/register", {
@@ -186,10 +186,10 @@ const Signup = () => {
                       </div>
                     </Form.Group>
 
-                    <Form.Group controlId="formProfile" className="mb-3">
+                    {/* <Form.Group controlId="formProfile" className="mb-3">
                       <Form.Label>Profile</Form.Label>
                       <Form.Control type="file" onChange={changeFileHandler} />
-                    </Form.Group>
+                    </Form.Group> */}
 
                     <Button variant="dark" type="submit" className="w-100">
                       Signup
@@ -204,7 +204,7 @@ const Signup = () => {
                 </>
               ) : (
                 <>
-                  <h3 className="text-center mb-4">Login</h3>
+                  <h3 className="text-center mb-4">Welcome Back </h3>
                   <Form onSubmit={handleLogin}>
                     <Form.Group controlId="loginEmail" className="mb-3">
                       <Form.Label>Email</Form.Label>
